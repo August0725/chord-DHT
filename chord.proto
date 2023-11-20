@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package chord;
+
+service Chord{
+
+  // GetPredecessor returns the node believed to be the current predecessor.
+  rpc GetPredecessor(ER) returns (Node);
+  // GetSuccessor returns the node believed to be the current successor.
+  rpc GetSuccessor(ER) returns (Node);
+  // FindSuccessor finds the node the after ID. May initiate RPC calls to
+  // other nodes.
+  rpc FindSuccessor(ID) returns (Node);
+  // ClosestPrecedingFinger returns closet finger preceding id
+  rpc ClosestPrecedingFinger(ID) returns (Node);
+}
+
+message Node {
+  int64 id = 1;
+  string addr = 2;
+}
+
+message ER {}
+
+message ID {
+  int64 id = 1;
+}
