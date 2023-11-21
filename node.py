@@ -14,7 +14,7 @@ class Node(pb2_grpc.ChordServicer):
         self.successor = pb2.Node(id=70, addr="127.0.0.1:9098")
         self.finger_table = []
         self.storage = {}
-        self.rpcServer - rpc_controller.RpcServer(addr)
+        self.rpcServer = rpc_controller.RpcServer(addr)
         self.rpcClient = rpc_controller.RpcClient()
 
         pb2_grpc.add_ChordServicer_to_server(self, self.rpcServer.server)
