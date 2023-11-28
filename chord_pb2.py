@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63hord.proto\x12\x05\x63hord\" \n\x04Node\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04\x61\x64\x64r\x18\x02 \x01(\t\"\x04\n\x02\x45R\"\x10\n\x02ID\x12\n\n\x02id\x18\x01 \x01(\x03\x32\xb4\x01\n\x05\x43hord\x12(\n\x0eGetPredecessor\x12\t.chord.ER\x1a\x0b.chord.Node\x12&\n\x0cGetSuccessor\x12\t.chord.ER\x1a\x0b.chord.Node\x12\'\n\rFindSuccessor\x12\t.chord.ID\x1a\x0b.chord.Node\x12\x30\n\x16\x43losestPrecedingFinger\x12\t.chord.ID\x1a\x0b.chord.Nodeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63hord.proto\x12\x05\x63hord\" \n\x04Node\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04\x61\x64\x64r\x18\x02 \x01(\t\"\x04\n\x02\x45R\"\x10\n\x02ID\x12\n\n\x02id\x18\x01 \x01(\x03\"\x19\n\nGetRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"(\n\x0bGetResponse\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ok\x18\x02 \x01(\x08\"(\n\nSetRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\r\n\x0bSetResponse\"\x19\n\nDelRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"(\n\x0b\x44\x65lResponse\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ok\x18\x02 \x01(\x08\" \n\x02KV\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\x03KVs\x12\x19\n\x06values\x18\x01 \x03(\x0b\x32\t.chord.KV2\xd5\x05\n\x05\x43hord\x12(\n\x0eGetPredecessor\x12\t.chord.ER\x1a\x0b.chord.Node\x12&\n\x0cGetSuccessor\x12\t.chord.ER\x1a\x0b.chord.Node\x12\'\n\rFindSuccessor\x12\t.chord.ID\x1a\x0b.chord.Node\x12\x30\n\x16\x43losestPrecedingFinger\x12\t.chord.ID\x1a\x0b.chord.Node\x12 \n\x06Notify\x12\x0b.chord.Node\x1a\t.chord.ER\x12 \n\x07\x46indKVs\x12\t.chord.ID\x1a\n.chord.KVs\x12.\n\x05GetKV\x12\x11.chord.GetRequest\x1a\x12.chord.GetResponse\x12,\n\x03Get\x12\x11.chord.GetRequest\x1a\x12.chord.GetResponse\x12.\n\x05SetKV\x12\x11.chord.SetRequest\x1a\x12.chord.SetResponse\x12,\n\x03Set\x12\x11.chord.SetRequest\x1a\x12.chord.SetResponse\x12\x31\n\x08\x44\x65leteKV\x12\x11.chord.DelRequest\x1a\x12.chord.DelResponse\x12/\n\x06\x44\x65lete\x12\x11.chord.DelRequest\x1a\x12.chord.DelResponse\x12\x1c\n\x04Stop\x12\t.chord.ER\x1a\t.chord.ER\x12!\n\x08MoveData\x12\n.chord.KVs\x1a\t.chord.ER\x12&\n\x0cSetSuccessor\x12\x0b.chord.Node\x1a\t.chord.ER\x12(\n\x0eSetPredecessor\x12\x0b.chord.Node\x1a\t.chord.ER\x12(\n\x10\x43heckPredecessor\x12\t.chord.ER\x1a\t.chord.ERb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,6 +26,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_ER']._serialized_end=60
   _globals['_ID']._serialized_start=62
   _globals['_ID']._serialized_end=78
-  _globals['_CHORD']._serialized_start=81
-  _globals['_CHORD']._serialized_end=261
+  _globals['_GETREQUEST']._serialized_start=80
+  _globals['_GETREQUEST']._serialized_end=105
+  _globals['_GETRESPONSE']._serialized_start=107
+  _globals['_GETRESPONSE']._serialized_end=147
+  _globals['_SETREQUEST']._serialized_start=149
+  _globals['_SETREQUEST']._serialized_end=189
+  _globals['_SETRESPONSE']._serialized_start=191
+  _globals['_SETRESPONSE']._serialized_end=204
+  _globals['_DELREQUEST']._serialized_start=206
+  _globals['_DELREQUEST']._serialized_end=231
+  _globals['_DELRESPONSE']._serialized_start=233
+  _globals['_DELRESPONSE']._serialized_end=273
+  _globals['_KV']._serialized_start=275
+  _globals['_KV']._serialized_end=307
+  _globals['_KVS']._serialized_start=309
+  _globals['_KVS']._serialized_end=341
+  _globals['_CHORD']._serialized_start=344
+  _globals['_CHORD']._serialized_end=1069
 # @@protoc_insertion_point(module_scope)

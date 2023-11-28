@@ -34,6 +34,71 @@ class ChordStub(object):
                 request_serializer=chord__pb2.ID.SerializeToString,
                 response_deserializer=chord__pb2.Node.FromString,
                 )
+        self.Notify = channel.unary_unary(
+                '/chord.Chord/Notify',
+                request_serializer=chord__pb2.Node.SerializeToString,
+                response_deserializer=chord__pb2.ER.FromString,
+                )
+        self.FindKVs = channel.unary_unary(
+                '/chord.Chord/FindKVs',
+                request_serializer=chord__pb2.ID.SerializeToString,
+                response_deserializer=chord__pb2.KVs.FromString,
+                )
+        self.GetKV = channel.unary_unary(
+                '/chord.Chord/GetKV',
+                request_serializer=chord__pb2.GetRequest.SerializeToString,
+                response_deserializer=chord__pb2.GetResponse.FromString,
+                )
+        self.Get = channel.unary_unary(
+                '/chord.Chord/Get',
+                request_serializer=chord__pb2.GetRequest.SerializeToString,
+                response_deserializer=chord__pb2.GetResponse.FromString,
+                )
+        self.SetKV = channel.unary_unary(
+                '/chord.Chord/SetKV',
+                request_serializer=chord__pb2.SetRequest.SerializeToString,
+                response_deserializer=chord__pb2.SetResponse.FromString,
+                )
+        self.Set = channel.unary_unary(
+                '/chord.Chord/Set',
+                request_serializer=chord__pb2.SetRequest.SerializeToString,
+                response_deserializer=chord__pb2.SetResponse.FromString,
+                )
+        self.DeleteKV = channel.unary_unary(
+                '/chord.Chord/DeleteKV',
+                request_serializer=chord__pb2.DelRequest.SerializeToString,
+                response_deserializer=chord__pb2.DelResponse.FromString,
+                )
+        self.Delete = channel.unary_unary(
+                '/chord.Chord/Delete',
+                request_serializer=chord__pb2.DelRequest.SerializeToString,
+                response_deserializer=chord__pb2.DelResponse.FromString,
+                )
+        self.Stop = channel.unary_unary(
+                '/chord.Chord/Stop',
+                request_serializer=chord__pb2.ER.SerializeToString,
+                response_deserializer=chord__pb2.ER.FromString,
+                )
+        self.MoveData = channel.unary_unary(
+                '/chord.Chord/MoveData',
+                request_serializer=chord__pb2.KVs.SerializeToString,
+                response_deserializer=chord__pb2.ER.FromString,
+                )
+        self.SetSuccessor = channel.unary_unary(
+                '/chord.Chord/SetSuccessor',
+                request_serializer=chord__pb2.Node.SerializeToString,
+                response_deserializer=chord__pb2.ER.FromString,
+                )
+        self.SetPredecessor = channel.unary_unary(
+                '/chord.Chord/SetPredecessor',
+                request_serializer=chord__pb2.Node.SerializeToString,
+                response_deserializer=chord__pb2.ER.FromString,
+                )
+        self.CheckPredecessor = channel.unary_unary(
+                '/chord.Chord/CheckPredecessor',
+                request_serializer=chord__pb2.ER.SerializeToString,
+                response_deserializer=chord__pb2.ER.FromString,
+                )
 
 
 class ChordServicer(object):
@@ -68,6 +133,84 @@ class ChordServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Notify(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def FindKVs(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetKV(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Get(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetKV(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Set(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteKV(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Stop(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def MoveData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetSuccessor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetPredecessor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CheckPredecessor(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ChordServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -90,6 +233,71 @@ def add_ChordServicer_to_server(servicer, server):
                     servicer.ClosestPrecedingFinger,
                     request_deserializer=chord__pb2.ID.FromString,
                     response_serializer=chord__pb2.Node.SerializeToString,
+            ),
+            'Notify': grpc.unary_unary_rpc_method_handler(
+                    servicer.Notify,
+                    request_deserializer=chord__pb2.Node.FromString,
+                    response_serializer=chord__pb2.ER.SerializeToString,
+            ),
+            'FindKVs': grpc.unary_unary_rpc_method_handler(
+                    servicer.FindKVs,
+                    request_deserializer=chord__pb2.ID.FromString,
+                    response_serializer=chord__pb2.KVs.SerializeToString,
+            ),
+            'GetKV': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetKV,
+                    request_deserializer=chord__pb2.GetRequest.FromString,
+                    response_serializer=chord__pb2.GetResponse.SerializeToString,
+            ),
+            'Get': grpc.unary_unary_rpc_method_handler(
+                    servicer.Get,
+                    request_deserializer=chord__pb2.GetRequest.FromString,
+                    response_serializer=chord__pb2.GetResponse.SerializeToString,
+            ),
+            'SetKV': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetKV,
+                    request_deserializer=chord__pb2.SetRequest.FromString,
+                    response_serializer=chord__pb2.SetResponse.SerializeToString,
+            ),
+            'Set': grpc.unary_unary_rpc_method_handler(
+                    servicer.Set,
+                    request_deserializer=chord__pb2.SetRequest.FromString,
+                    response_serializer=chord__pb2.SetResponse.SerializeToString,
+            ),
+            'DeleteKV': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteKV,
+                    request_deserializer=chord__pb2.DelRequest.FromString,
+                    response_serializer=chord__pb2.DelResponse.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=chord__pb2.DelRequest.FromString,
+                    response_serializer=chord__pb2.DelResponse.SerializeToString,
+            ),
+            'Stop': grpc.unary_unary_rpc_method_handler(
+                    servicer.Stop,
+                    request_deserializer=chord__pb2.ER.FromString,
+                    response_serializer=chord__pb2.ER.SerializeToString,
+            ),
+            'MoveData': grpc.unary_unary_rpc_method_handler(
+                    servicer.MoveData,
+                    request_deserializer=chord__pb2.KVs.FromString,
+                    response_serializer=chord__pb2.ER.SerializeToString,
+            ),
+            'SetSuccessor': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetSuccessor,
+                    request_deserializer=chord__pb2.Node.FromString,
+                    response_serializer=chord__pb2.ER.SerializeToString,
+            ),
+            'SetPredecessor': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetPredecessor,
+                    request_deserializer=chord__pb2.Node.FromString,
+                    response_serializer=chord__pb2.ER.SerializeToString,
+            ),
+            'CheckPredecessor': grpc.unary_unary_rpc_method_handler(
+                    servicer.CheckPredecessor,
+                    request_deserializer=chord__pb2.ER.FromString,
+                    response_serializer=chord__pb2.ER.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -166,5 +374,226 @@ class Chord(object):
         return grpc.experimental.unary_unary(request, target, '/chord.Chord/ClosestPrecedingFinger',
             chord__pb2.ID.SerializeToString,
             chord__pb2.Node.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Notify(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/Notify',
+            chord__pb2.Node.SerializeToString,
+            chord__pb2.ER.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FindKVs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/FindKVs',
+            chord__pb2.ID.SerializeToString,
+            chord__pb2.KVs.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetKV(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/GetKV',
+            chord__pb2.GetRequest.SerializeToString,
+            chord__pb2.GetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Get(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/Get',
+            chord__pb2.GetRequest.SerializeToString,
+            chord__pb2.GetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetKV(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/SetKV',
+            chord__pb2.SetRequest.SerializeToString,
+            chord__pb2.SetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Set(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/Set',
+            chord__pb2.SetRequest.SerializeToString,
+            chord__pb2.SetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteKV(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/DeleteKV',
+            chord__pb2.DelRequest.SerializeToString,
+            chord__pb2.DelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/Delete',
+            chord__pb2.DelRequest.SerializeToString,
+            chord__pb2.DelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Stop(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/Stop',
+            chord__pb2.ER.SerializeToString,
+            chord__pb2.ER.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def MoveData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/MoveData',
+            chord__pb2.KVs.SerializeToString,
+            chord__pb2.ER.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetSuccessor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/SetSuccessor',
+            chord__pb2.Node.SerializeToString,
+            chord__pb2.ER.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetPredecessor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/SetPredecessor',
+            chord__pb2.Node.SerializeToString,
+            chord__pb2.ER.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CheckPredecessor(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chord.Chord/CheckPredecessor',
+            chord__pb2.ER.SerializeToString,
+            chord__pb2.ER.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

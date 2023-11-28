@@ -13,6 +13,32 @@ service Chord{
   rpc FindSuccessor(ID) returns (Node);
   // ClosestPrecedingFinger returns closet finger preceding id
   rpc ClosestPrecedingFinger(ID) returns (Node);
+
+  rpc Notify(Node) returns (ER);
+
+  rpc FindKVs(ID) returns (KVs);
+
+  rpc GetKV(GetRequest) returns (GetResponse);
+
+  rpc Get(GetRequest) returns (GetResponse);
+
+  rpc SetKV(SetRequest) returns (SetResponse);
+
+  rpc Set(SetRequest) returns (SetResponse);
+
+  rpc DeleteKV(DelRequest) returns (DelResponse);
+
+  rpc Delete(DelRequest) returns (DelResponse);
+
+  rpc Stop(ER) returns (ER);
+
+  rpc MoveData(KVs) returns (ER);
+
+  rpc SetSuccessor(Node) returns (ER);
+
+  rpc SetPredecessor(Node) returns (ER);
+
+  rpc CheckPredecessor(ER) returns (ER);
 }
 
 message Node {
@@ -24,4 +50,38 @@ message ER {}
 
 message ID {
   int64 id = 1;
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetResponse {
+  string value = 1;
+  bool ok = 2;
+}
+
+message SetRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message SetResponse {}
+
+message DelRequest {
+  string key = 1;
+}
+
+message DelResponse {
+  string value = 1;
+  bool ok = 2;
+}
+
+message KV {
+  string key = 1;
+  string value = 2;
+}
+
+message KVs {
+  repeated KV values = 1;
 }
