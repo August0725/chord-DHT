@@ -83,6 +83,47 @@ class Node(pb2_grpc.ChordServicer):
         self.finger_table[0][1] = succ
         return True
 
+    def migrate_data(self):
+        # Request key-value data from the successor node for migration.
+        res = self.find_kvs_rpc()
+        if res is None:
+            return
+        self.storage.lock.acquire()         # Lock the storage to safely migrate data.
+        for kv in res.values:               # Migrate each key-value pair into this node's storage.
+            self.storage.data[kv.key] = kv.value
+        self.storage.lock.release()         # Release the lock after migration is done.
+
+    def _stabilize(self):
+        self.pointer_lock.acquire()         # Acquire the pointer lock to prevent concurrent modifications to the successor.
+        succ = self.successor               # Temporarily store the current successor.
+        x = self.get_predecessor_rpc(succ)  # Find the predecessor of the successor node.
+        if x is None:                       # If the predecessor is not found, release the lock and return.
+            return
+
+        # If the id of the found predecessor node is between this node and the current successor,
+        # update the successor to be the found predecessor.
+        if x.id != -1 and util.between(x.id, self.node.id, succ.id):
+            self.successor = x
+            self.finger_table[0][1] = x
+        self.pointer_lock.release()         # Release the pointer lock after updating the successor.
+        self.migrate_data()                 # Migrate data from the successor if there are any changes in the network.
+        self.notify_rpc(self.successor, self.node)      # Notify the successor about this node's existence, possibly as its new predecessor.
+
+    def stabilize(self):
+        # Run the stabilization process continuously until the node is stopped.
+        while not self.stop_event.is_set():
+            # time.sleep(3)
+            self._stabilize()               # Call the internal stabilize method to check and update the successor and predecessor.
+            print(f"self: {self.node.id}, {self.node.addr}")
+            print(
+                f"successor: {self.successor.id if self.successor else None}, {self.successor.addr if self.successor else None}")
+            print(
+                f"predecessor: {self.predecessor.id if self.predecessor else None}, {self.predecessor.addr if self.predecessor else None}")
+            print(f"storage: {self.storage.data}")
+            self.print_finger_table()
+            print("-------------------------------------")
+            time.sleep(3)                   # Pause for a while before the next stabilization check.
+
     def fix_finger(self):
         # Periodically update the finger table to maintain the Chord ring's structure
         next_idx = 0
