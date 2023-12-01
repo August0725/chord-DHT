@@ -8,9 +8,14 @@ This project is an implementation of a Distributed Hash Table (DHT) using the Ch
 
 ### Setting Up the Environment
 
-Before launching nodes and the client, activate the virtual environment:
+Before launching nodes and the client, create and activate the virtual environment (install necessary packages):
 
-`source env/bin/activate`
+```
+virtualenv -p python3.8 env
+python -m pip install grpcio
+python -m, pip install grpcio-tools
+source env/bin/activate
+```
 
 ### Launching a Node
 
@@ -24,25 +29,22 @@ This starts a node at IP address 127.0.0.1 and port 9092.
 To add a new node to the DHT network:
 `python node.py 127.0.0.1:9094 127.0.0.1:9092`
 
-This initiates a new node on IP address 127.0.0.1 and port 9999, connecting to the node on port 9092.
-
-### Leaving the Network
-
-To exit a node from the network, type `stop` in the node's command line.
+This initiates a new node on IP address 127.0.0.1 and port 9094, connecting to the node on port 9092.
 
 ### Launching the Client
 
 To interact with the DHT network:
 
-`python client.py bootstrap_server 127.0.0.1:9094`
+`python client.py`
 
-Replace `9094` with the appropriate port number of the bootstrap server node.
 
 ### Client Commands
 
-- Add Key-Value Pair: set `<key>` `<value>`
-- Delete Key-Value Pair: del `<key>` `<value>`
-- Retrieve Value by Key: get `<key>`
+- Connect the client to a bootstrap node：`bootstrap_server <ip:port>`
+- Add Key-Value Pair: `set <key> <value>`
+- Delete Key-Value Pair: `del <key> <value>`
+- Retrieve Value by Key: `get <key>`
+- Exit a node from the system: `stop`
 
 Replace `<key>` and `<value>` with the desired key and value for your operations.
 

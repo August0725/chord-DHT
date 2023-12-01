@@ -4,6 +4,7 @@ import threading
 import chord_pb2 as pb2
 import chord_pb2_grpc as pb2_grpc
 
+
 class RpcServer:
     def __init__(self, addr):
         self.addr = addr
@@ -52,6 +53,7 @@ class RpcClient:
             print(f"error while finding successor")
             res = None
         return res
+
     def closest_preceding_finger(self, node, hid):
         try:
             conn = self.get_connect(node.addr)
